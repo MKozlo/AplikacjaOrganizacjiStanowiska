@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\Aplikacja organizacji stanowiska fizycznego i wirtualnego.props" />
+</Project>

@@ -1,0 +1,49 @@
+﻿@model Aplikacja_organizacji_stanowiska_fizycznego_i_wirtualnego.Models.QuestionViewModel
+
+@{
+    ViewData["Title"] = "Pytanie";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewData["Title"]</title>
+</head>
+<body>
+    <h2>@Model.PositionContent</h2>
+    <h3>Krok @Model.Position @Model.StepContent</h3>
+
+    <br />
+    <br />
+
+    <div class="center">
+        <p>@Model.QuestionContent</p>
+
+        <div class="questions">
+            @foreach (var answer in Model.Answers)
+            {
+                <label class="answer-label">
+                    <input type="radio" id="label@answer.Id" name="answer" value="@answer.Id" />
+                    @answer.Content
+                </label>
+            }
+        </div>
+
+        <br /><br />
+
+        <div class="go">
+            <button id="btnCofnij" type="button" onclick="window.history.back();">Cofnij</button>
+            <button id="btnDalej" type="submit" onclick="location.href='@Url.Action("Pytanie", new { pozycjaIndex = Model.Position, krokIndex = Model.Step, pytanieIndex = Model.Question + 1 })'">Dalej</button>
+        </div>
+
+        <br />
+
+        <div class="save">
+            <button id="btnZapisz" type="button">Zapisz</button>
+            <button id="btnEksport" type="button">Eksport do <i>.pdf</i></button>
+            <button id="btnZapiszIWyjdz" type="button">Zapisz i wyjdź</button>
+        </div>
+    </div>
+</body>
+</html>
