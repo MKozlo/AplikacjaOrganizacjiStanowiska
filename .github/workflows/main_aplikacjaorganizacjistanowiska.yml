@@ -54,4 +54,4 @@ jobs:
           app-name: 'AplikacjaOrganizacjiStanowiska'
           slot-name: 'Production'
           package: .
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_D8ED300B58D24EEE8AAA871DD4CB221C }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_6D57B210C6B54491B495D04CF7D23971 }}
